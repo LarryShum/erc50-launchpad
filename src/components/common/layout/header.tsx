@@ -18,7 +18,7 @@ const SOCIAL_MEDIA = [
 
 export default function Header() {
   return (
-    <div className="sticky top-0 flex bg-white border-2 border-deep_green">
+    <div className="sticky top-0 flex bg-white border-2 border-deep_green z-20">
       <div className="w-full flex justify-between items-center py-4 px-10">
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3">
