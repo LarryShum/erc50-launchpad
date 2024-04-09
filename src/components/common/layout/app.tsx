@@ -21,7 +21,7 @@ const poppins = Poppins({
 export default function AppLayout({ children }: AppLayoutProps) {
   return (
     <div
-      className={`min-h-screen relative text-vampire_black tracking-wide bg-[url('/svg/bg-body.svg')] p-10 ${poppins.variable} ${handjet.className}`}
+      className={`min-h-screen relative text-vampire_black tracking-wide bg-[url('/svg/bg-body.svg')] py-10 px-4 md:px-10 ${poppins.variable} ${handjet.className}`}
     >
       <Metadata />
       <Header />

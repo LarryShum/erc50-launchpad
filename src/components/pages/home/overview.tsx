@@ -46,8 +46,8 @@ export default function Overview() {
 
   return (
     <div className="flex-1 flex flex-col">
-      <div className="flex flex-col gap-10 bg-[url('/img/bg-section-1.jpeg')] py-16 px-10">
-        <div className="flex items-center gap-6">
+      <div className="flex flex-col gap-10 bg-[url('/img/bg-section-1.jpeg')] bg-no-repeat bg-cover py-16 px-4 md:px-10">
+        <div className="flex flex-wrap items-center gap-6">
           <h1 className="text-6xl font-bold">ERC50 Launchpad</h1>
           <div className="flex items-center gap-4">
             {MENU_TEXT.map((item, index) => (
@@ -59,7 +59,7 @@ export default function Overview() {
             ))}
           </div>
         </div>
-        <div className="flex items-center gap-8">
+        <div className="flex flex-wrap items-center gap-8">
           {MENU_BUTTON.map((item, index) => (
             <div key={index} className="flex flex-col items-center gap-4">
               <Link
@@ -86,7 +86,7 @@ export default function Overview() {
           ))}
         </div>
       </div>
-      <div className="flex flex-col gap-20 bg-[url('/img/bg-section-2.png')] border-t-2 border-deep_green pt-16 px-10">
+      <div className="flex flex-col gap-20 bg-[url('/img/bg-section-2.png')] border-t-2 border-deep_green pt-16 px-4 md:px-10">
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-4">
             <Image
@@ -99,7 +99,7 @@ export default function Overview() {
           </div>
           <Image src={"/svg/icon-hearts.svg"} width={120} height={28} alt="" />
         </div>
-        <div className="flex items-end justify-between gap-4">
+        <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="flex gap-12 pb-10">
             <div className="flex flex-col gap-6">
               <p className="text-yellow_green">Deployed Projects Count</p>

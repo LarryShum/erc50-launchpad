@@ -18,8 +18,8 @@ const SOCIAL_MEDIA = [
 
 export default function Header() {
   return (
-    <div className="sticky top-0 flex bg-white border-2 border-deep_green z-20">
-      <div className="w-full flex justify-between items-center py-4 px-10">
+    <div className="sticky top-0 flex flex-wrap bg-white border-2 border-deep_green z-20">
+      <div className="w-full flex-1 flex justify-between items-center py-4 px-4 md:px-10">
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3">
             <Image src={"/svg/logo.svg"} width={28} height={40} alt="" />
@@ -34,7 +34,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="flex items-center gap-5 bg-yellow_green px-10 border-l-2 border-deep_green">
+      <div className="w-full md:w-auto flex items-center gap-5 bg-yellow_green border-l-2 border-deep_green py-3 md:py-0 px-4 md:px-10">
         {SOCIAL_MEDIA.map((item, index) => (
           <Link key={index} href={item.link} target="_blank">
             <div className="w-12 h-12 flex justify-center items-center bg-[url('/svg/button-rounded.svg')] hover:bg-[url('/svg/button-rounded-active.svg')] bg-no-repeat">

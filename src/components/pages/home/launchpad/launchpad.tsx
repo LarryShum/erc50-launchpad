@@ -65,7 +65,7 @@ export default function Launchpad() {
   const [currentTab, setCurrentTab] = useState<string>("Active");
 
   return (
-    <div className="flex flex-col gap-8 items-center bg-yellow_green border-2 border-t-0 border-deep_green py-16 px-10">
+    <div className="flex flex-col gap-8 items-center bg-yellow_green border-2 border-t-0 border-deep_green py-16 px-4 md:px-10">
       <h1 className="text-6xl font-bold">The ERC50 Ecosystem</h1>
       <div className="flex border-2 border-deep_green">
         {TABS.map((item, index) => (
@@ -79,11 +79,11 @@ export default function Launchpad() {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
         {ACTIVE_LISTING_LIST.map((item, index) => (
           <div
             key={index}
-            className="w-96 flex flex-col gap-4 bg-white border-2 border-deep_green p-4"
+            className="w-full lg:w-80 flex flex-col gap-4 bg-white border-2 border-deep_green p-4"
           >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 flex justify-center items-center bg-army_green rounded-full">
@@ -98,7 +98,7 @@ export default function Launchpad() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col gap-1 font-poppins text-sm break-all">
+            <div className="flex flex-col gap-1 font-poppins text-sm break-words">
               <div className="flex gap-2">
                 <p>
                   <span className="font-semibold text-deep_green">
