@@ -15,6 +15,9 @@ const config: Config = {
         army_green: "#395111",
         vampire_black: "#021b02",
       },
+      fontFamily: {
+        poppins: "var(--font-poppins)",
+      },
     },
   },
   plugins: [],
