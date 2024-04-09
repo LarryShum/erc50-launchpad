@@ -39,7 +39,7 @@ export default function Header() {
           <Link key={index} href={item.link} target="_blank">
             <div className="w-12 h-12 flex justify-center items-center bg-[url('/svg/button-rounded.svg')] hover:bg-[url('/svg/button-rounded-active.svg')] bg-no-repeat">
               <Image
-                src={`/svg/social-${item.name}.svg`}
+                src={`/svg/icon-social-${item.name}.svg`}
                 width={16}
                 height={16}
                 alt=""
