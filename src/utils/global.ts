@@ -10,26 +10,21 @@ export function shortenAddress(address: string, length = 4) {
 }
 
 export function currencyFormat(input: string | number) {
-  if (input === null || undefined) {
+  if (input == null || isNaN(Number(input))) {
     return "";
   }
 
-  // Convert the input to a number if it's a string
   const number = typeof input === "string" ? parseFloat(input) : input;
 
-  if (isNaN(number)) {
-    return "";
-  }
-
-  const roundedNumber = Math.floor(number * 100) / 100;
-  const hasFractionalPart = roundedNumber % 1 !== 0;
+  const minimumFractionDigits = Math.abs(number) < 1 ? 0 : 2;
+  const maximumFractionDigits = Math.abs(number) < 1 ? 4 : 2;
 
   const formatted = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-    minimumFractionDigits: hasFractionalPart ? 2 : 0,
-    maximumFractionDigits: 2,
-  }).format(roundedNumber);
+    minimumFractionDigits,
+    maximumFractionDigits,
+  }).format(number);
 
   return formatted.replace("$", "").trim();
 }

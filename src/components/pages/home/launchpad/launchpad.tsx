@@ -34,6 +34,8 @@ export default function Launchpad() {
     useQuery<LaunchpadListTypes>(LAUNCHPAD_LIST_QUERY);
   const tokens = data?.tokens || [];
 
+  console.log(tokens);
+
   return (
     <div className="flex flex-col gap-8 items-center bg-yellow_green border-2 border-t-0 border-deep_green py-16 px-4 md:px-10">
       <h1 className="text-6xl font-bold">The ERC50 Ecosystem</h1>
@@ -70,6 +72,10 @@ export default function Launchpad() {
                 </div>
               </div>
               <div className="flex flex-col gap-1 font-poppins text-sm break-words">
+                <p>
+                  <span className="font-semibold text-deep_green">Chain:</span>{" "}
+                  <span className="opacity-80">Base</span>
+                </p>
                 <div
                   className="flex gap-2 cursor-pointer"
                   onClick={() => {
@@ -92,13 +98,21 @@ export default function Launchpad() {
                     alt=""
                   />
                 </div>
+
                 <p>
                   <span className="font-semibold text-deep_green">
                     Mint Supply:
                   </span>{" "}
                   <span className="opacity-80">
                     {currencyFormat(parseInt(item.totalSupply) / 2 / 10 ** 18)}{" "}
-                    {item.symbol}
+                    {item.symbol} /{" "}
+                    {currencyFormat(
+                      (parseInt(item.totalSupply) /
+                        2 /
+                        parseInt(item.amountPerUnits)) *
+                        (parseInt(item.price) / 10 ** 18)
+                    )}{" "}
+                    ETH
                   </span>
                 </p>
                 <p>
@@ -111,9 +125,10 @@ export default function Launchpad() {
                   </span>
                 </p>
                 <p>
-                  <span className="font-semibold text-deep_green">Min:</span>{" "}
-                  <span className="opacity-80">{0.001} ETH /</span>{" "}
-                  <span className="font-semibold text-deep_green">Max:</span>{" "}
+                  <span className="font-semibold text-deep_green">
+                    Min Limit:
+                  </span>{" "}
+                  <span className="opacity-80">{0.001} </span> ~{" "}
                   <span className="opacity-80">
                     {currencyFormat(
                       parseInt(item.eachAddressLimitEthers) / 10 ** 18
