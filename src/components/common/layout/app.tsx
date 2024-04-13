@@ -28,7 +28,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
       <Metadata />
       <Header />
       <main>{children}</main>
-      <ToastContainer autoClose={2000} />
+      <ToastContainer autoClose={2400} />
     </div>
   );
 }

@@ -7,15 +7,18 @@ import { useState } from "react";
 const MENU_TEXT = [
   {
     name: "User Guide",
-    link: "/",
+    link: "https://drive.google.com/file/d/1wZI69VhLm_7ztG-5qF8uazcfnl-4vqDi/view?usp=sharing",
+    redirect: true,
   },
   {
     name: "Check Audit",
-    link: "/",
+    link: "https://github.com/DamoclesLabs/Audit/blob/main/Dino/Code%20Security%20Audit%20Report%20For%20DINO.pdf",
+    redirect: true,
   },
   {
     name: "Minting Rules",
     link: "/",
+    redirect: false,
   },
 ];
 
@@ -23,7 +26,7 @@ const MENU_BUTTON = [
   {
     name: "Learn ERC50",
     icon: "logo",
-    link: "/",
+    link: "https://dinobase.gitbook.io/dino-erc50",
     desc: "What is ERC50?",
     redirect: true,
   },
@@ -37,7 +40,7 @@ const MENU_BUTTON = [
   {
     name: "Buy $DINO",
     icon: "icon-dino",
-    link: "/",
+    link: "https://app.uniswap.org/swap?outputCurrency=0x85E90a5430AF45776548ADB82eE4cD9E33B08077&chain=base",
     desc: "The first ERC50 token",
     redirect: true,
   },
@@ -65,7 +68,11 @@ export default function Overview() {
           <h1 className="text-6xl font-bold">ERC50 Launchpad</h1>
           <div className="flex items-center gap-4">
             {MENU_TEXT.map((item, index) => (
-              <Link key={index} href={item.link}>
+              <Link
+                key={index}
+                href={item.link}
+                target={item.redirect ? "_blank" : ""}
+              >
                 <p className="text-2xl font-semibold text-army_green underline">
                   {item.name}
                 </p>
@@ -101,7 +108,7 @@ export default function Overview() {
         </div>
       </div>
       <div className="flex flex-col gap-20 bg-[url('/img/bg-section-2.png')] border-t-2 border-deep_green pt-16 px-4 md:px-10">
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center gap-6">
           <div className="flex items-center gap-4">
             <Image
               src={"/svg/icon-computer.svg"}

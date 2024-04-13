@@ -34,8 +34,6 @@ export default function Launchpad() {
     useQuery<LaunchpadListTypes>(LAUNCHPAD_LIST_QUERY);
   const tokens = data?.tokens || [];
 
-  console.log(tokens);
-
   return (
     <div className="flex flex-col gap-8 items-center bg-yellow_green border-2 border-t-0 border-deep_green py-16 px-4 md:px-10">
       <h1 className="text-6xl font-bold">The ERC50 Ecosystem</h1>
