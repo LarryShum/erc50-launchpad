@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import { Metadata } from "../metadata";
 import { Handjet, Poppins } from "next/font/google";
 import Header from "./header";
+import { Flip, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -26,6 +28,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
       <Metadata />
       <Header />
       <main>{children}</main>
+      <ToastContainer autoClose={2000} />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { LaunchpadListTypes } from "@/types/globals";
+import { toast } from "react-toastify";
 
 const TABS = ["Active", "Ended"];
 
@@ -69,13 +70,19 @@ export default function Launchpad() {
                 </div>
               </div>
               <div className="flex flex-col gap-1 font-poppins text-sm break-words">
-                <div className="flex gap-2">
+                <div
+                  className="flex gap-2 cursor-pointer"
+                  onClick={() => {
+                    navigator.clipboard.writeText(item.id);
+                    toast.success("Address Copied");
+                  }}
+                >
                   <p>
                     <span className="font-semibold text-deep_green">
                       Token Address:
                     </span>{" "}
                     <span className="opacity-80">
-                      {shortenAddress(item.hash)}
+                      {shortenAddress(item.id)}
                     </span>
                   </p>
                   <Image

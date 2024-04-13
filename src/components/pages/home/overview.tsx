@@ -58,8 +58,6 @@ export default function Overview() {
   const { loading, error, data } =
     useQuery<LaunchpadListTypes>(LAUNCHPAD_LIST_QUERY);
 
-  console.log(data?.protocols);
-
   return (
     <div className="flex-1 flex flex-col">
       <div className="flex flex-col gap-10 bg-[url('/img/bg-section-1.jpeg')] bg-no-repeat bg-cover py-16 px-4 md:px-10">
@@ -120,7 +118,7 @@ export default function Overview() {
             <div className="flex flex-col gap-6">
               <p className="text-yellow_green">Deployed Projects Count</p>
               <p className="text-6xl font-semibold text-white">
-                {data?.protocols[0].totalTokens}
+                {data?.protocols[0].totalTokens || 0}
               </p>
             </div>
             <div className="flex flex-col gap-6">
@@ -131,7 +129,8 @@ export default function Overview() {
                 </div>
               </div>
               <p className="text-6xl font-semibold text-white">
-                {parseInt(data?.protocols[0].totalRaised as string) / 10 ** 18}
+                {parseInt(data?.protocols[0].totalRaised as string) /
+                  10 ** 18 || 0}
               </p>
             </div>
           </div>
@@ -143,6 +142,7 @@ export default function Overview() {
                 height={48}
                 alt=""
                 className="pb-7"
+                unoptimized
               />
             </div>
             <Image src={"/svg/arrow.svg"} width={36} height={60} alt="" />

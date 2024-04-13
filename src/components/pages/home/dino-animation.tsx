@@ -9,6 +9,7 @@ export default function DinoAnimation() {
           fill
           alt=""
           className="overflow-clip [transform:rotateY(180deg)]"
+          unoptimized
         />
       </div>
     </div>
