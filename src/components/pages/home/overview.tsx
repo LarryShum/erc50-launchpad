@@ -1,3 +1,5 @@
+import { LaunchpadListTypes } from "@/types/globals";
+import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -41,8 +43,22 @@ const MENU_BUTTON = [
   },
 ];
 
+const LAUNCHPAD_LIST_QUERY = gql`
+  query MyQuery {
+    protocols {
+      id
+      totalRaised
+      totalTokens
+    }
+  }
+`;
+
 export default function Overview() {
   const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
+  const { loading, error, data } =
+    useQuery<LaunchpadListTypes>(LAUNCHPAD_LIST_QUERY);
+
+  console.log(data?.protocols);
 
   return (
     <div className="flex-1 flex flex-col">
@@ -103,7 +119,9 @@ export default function Overview() {
           <div className="flex gap-12 pb-10">
             <div className="flex flex-col gap-6">
               <p className="text-yellow_green">Deployed Projects Count</p>
-              <p className="text-6xl font-semibold text-white">11</p>
+              <p className="text-6xl font-semibold text-white">
+                {data?.protocols[0].totalTokens}
+              </p>
             </div>
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-2">
@@ -112,7 +130,9 @@ export default function Overview() {
                   <p className="text-sm font-semibold">ETH</p>
                 </div>
               </div>
-              <p className="text-6xl font-semibold text-white">0.522</p>
+              <p className="text-6xl font-semibold text-white">
+                {parseInt(data?.protocols[0].totalRaised as string) / 10 ** 18}
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-8">
