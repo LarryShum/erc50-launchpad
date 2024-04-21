@@ -6,7 +6,7 @@ import "@rainbow-me/rainbowkit/styles.css";
 
 import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
-import { mainnet, polygon, optimism, arbitrum, base } from "wagmi/chains";
+import { base } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { AvatarBlockies } from "@/components/common/avatar";
 
@@ -18,7 +18,7 @@ const client = new ApolloClient({
 const config = getDefaultConfig({
   appName: "ERC50 Launchpad",
   projectId: process.env.NEXT_PUBLIC_ALCHEMY_ID as string,
-  chains: [mainnet, polygon, optimism, arbitrum, base],
+  chains: [base],
   ssr: true,
 });
 
