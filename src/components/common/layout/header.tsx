@@ -1,5 +1,8 @@
+import { shortenAddress } from "@/utils/global";
+import { useAccountModal, useConnectModal } from "@rainbow-me/rainbowkit";
 import Image from "next/image";
 import Link from "next/link";
+import { useAccount } from "wagmi";
 
 const SOCIAL_MEDIA = [
   {
@@ -17,6 +20,10 @@ const SOCIAL_MEDIA = [
 ];
 
 export default function Header() {
+  const { address, isConnected } = useAccount();
+  const { openConnectModal } = useConnectModal();
+  const { openAccountModal } = useAccountModal();
+
   return (
     <div className="sticky top-0 flex flex-wrap bg-white border-2 border-deep_green z-20">
       <div className="w-full flex-1 flex justify-between items-center py-4 px-4 md:px-10">
@@ -33,6 +40,14 @@ export default function Header() {
             <div className="w-6 h-6 bg-acid_green rounded-full" />
           </div>
         </div>
+        <button
+          className="w-32 h-12 flex justify-center items-center gap-3 bg-[url('/svg/button.svg')] bg-cover hover:bg-[url('/svg/button-hover.svg')] hover:text-white pb-3"
+          onClick={isConnected ? openAccountModal : openConnectModal}
+        >
+          <p className="text-xs font-semibold font-poppins">
+            {isConnected ? shortenAddress(address as string) : "Connect Wallet"}
+          </p>
+        </button>
       </div>
       <div className="w-full md:w-auto flex items-center gap-5 bg-yellow_green border-l-2 border-deep_green py-3 md:py-0 px-4 md:px-10">
         {SOCIAL_MEDIA.map((item, index) => (
