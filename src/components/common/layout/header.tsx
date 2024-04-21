@@ -33,12 +33,12 @@ export default function Header() {
     <div className="sticky top-0 flex max-md:flex-col bg-white border-2 border-deep_green z-20">
       <div className="w-full flex-1 flex flex-wrap justify-between items-center gap-4 py-4 px-4 md:px-10">
         <div className="flex items-center gap-6">
-          <div className="flex items-center gap-3">
+          <Link href={"/"} className="flex items-center gap-3">
             <Image src={"/svg/logo.svg"} width={28} height={40} alt="" />
             <p className="text-xl font-poppins font-bold text-deep_green">
               ERC50 Launchpad
             </p>
-          </div>
+          </Link>
           <div className="flex items-center gap-4">
             <div className="w-6 h-6 bg-deep_green rounded-full" />
             <div className="w-6 h-6 bg-yellow_green rounded-full" />

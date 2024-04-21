@@ -29,7 +29,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
       <Metadata />
       <Header />
       <div className="flex">
-        <main className="flex-1 border-2 border-t-0 border-deep_green">
+        <main className="flex-1 bg-white border-2 border-t-0 border-deep_green">
           {children}
         </main>
         <DinoAnimation />
