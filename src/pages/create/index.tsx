@@ -1,8 +1,17 @@
 import { Input } from "@/components/common/input";
-import { currencyFormat } from "@/utils/global";
+import { CreateTokenTypes } from "@/types/create-token";
+import { CurrencyFormatInput } from "@/utils/currency-format";
+import { handleInputChange } from "@/utils/handle-input-change";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Create() {
+  const [formData, setFormData] = useState<CreateTokenTypes>(
+    {} as CreateTokenTypes
+  );
+
+  console.log("Create token:", formData);
+
   return (
     <div className="h-full flex flex-col gap-8 bg-[url('/img/bg-section-3.png')] bg-no-repeat bg-cover py-16 px-4 md:px-10">
       <h1 className="max-lg:hidden text-6xl font-bold">
@@ -12,21 +21,43 @@ export default function Create() {
         You can create ERC50 token via Desktop
       </h1>
       <div className="max-lg:hidden grid grid-cols-2 gap-6">
-        <Input label="Token Name" />
-        <Input label="Token Symbol" />
         <Input
+          name="token_name"
+          label="Token Name"
+          onChange={(e) => handleInputChange(e, setFormData)}
+        />
+        <Input
+          name="token_symbol"
+          label="Token Symbol"
+          onChange={(e) => handleInputChange(e, setFormData)}
+        />
+        <Input
+          name="total_supply"
           label="Total Supply (50% Fair Mint, 50% LP)"
-          value={currencyFormat(1000000)}
+          value={CurrencyFormatInput(formData.total_supply)}
+          onChange={(e) => handleInputChange(e, setFormData)}
         />
         <Input label="Chain" disabled value={"Base"} />
-        <Input label="Mint Price" symbol={"Token/0.001 ETH"} />
+        <Input
+          name="mint_price"
+          label="Mint Price"
+          symbol={"Token/0.001 ETH"}
+          value={CurrencyFormatInput(formData.mint_price)}
+          onChange={(e) => handleInputChange(e, setFormData)}
+        />
         <div className="flex items-end gap-4">
           <Input label="Mint Supply" disabled symbol="Token" />
           <Input disabled symbol="ETH" />
         </div>
         <div className="flex items-end gap-4">
           <Input label="Per Mint (Min)" disabled value={0.001} symbol="ETH" />
-          <Input label="Per Mint (Max)" symbol="ETH" />
+          <Input
+            name="max_mint_per_address"
+            label="Per Mint (Max)"
+            symbol="ETH"
+            value={CurrencyFormatInput(formData.max_mint_per_address)}
+            onChange={(e) => handleInputChange(e, setFormData)}
+          />
         </div>
       </div>
       <div className="max-lg:hidden flex items-center gap-6 mt-8">

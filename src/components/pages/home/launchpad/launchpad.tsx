@@ -1,9 +1,10 @@
-import { currencyFormat, shortenAddress } from "@/utils/global";
+import { shortenAddress } from "@/utils/global";
 import Image from "next/image";
 import { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { LaunchpadListTypes } from "@/types/globals";
 import { toast } from "react-toastify";
+import { currencyFormat } from "@/utils/currency-format";
 
 const TABS = ["Active", "Ended"];
 
