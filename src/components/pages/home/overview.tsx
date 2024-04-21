@@ -31,7 +31,7 @@ const MENU_BUTTON = [
     redirect: true,
   },
   {
-    name: "Deploy Now",
+    name: "Create Token",
     icon: "icon-deploy",
     link: "/create",
     desc: "Deploy ERC50 protocol with one click",
@@ -88,7 +88,7 @@ export default function Overview() {
                 target={item.redirect ? "_blank" : ""}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="w-64 h-24 flex justify-center items-center gap-3 bg-[url('/svg/button.svg')] hover:bg-[url('/svg/button-hover.svg')] hover:text-white pb-4"
+                className="w-64 h-24 flex justify-center items-center gap-3 bg-[url('/svg/button.svg')] hover:bg-[url('/svg/button-hover.svg')] bg-cover bg-no-repeat hover:text-white pb-4"
               >
                 <Image
                   src={`/svg/${
