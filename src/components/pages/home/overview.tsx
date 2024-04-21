@@ -33,7 +33,7 @@ const MENU_BUTTON = [
   {
     name: "Deploy Now",
     icon: "icon-deploy",
-    link: "/",
+    link: "/create",
     desc: "Deploy ERC50 protocol with one click",
     redirect: false,
   },

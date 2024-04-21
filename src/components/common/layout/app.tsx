@@ -2,8 +2,9 @@ import { ReactNode } from "react";
 import { Metadata } from "../metadata";
 import { Handjet, Poppins } from "next/font/google";
 import Header from "./header";
-import { Flip, ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { DinoAnimation } from "../section";
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -27,7 +28,12 @@ export default function AppLayout({ children }: AppLayoutProps) {
     >
       <Metadata />
       <Header />
-      <main>{children}</main>
+      <div className="flex">
+        <main className="flex-1 border-2 border-t-0 border-deep_green">
+          {children}
+        </main>
+        <DinoAnimation />
+      </div>
       <ToastContainer autoClose={2400} />
     </div>
   );

@@ -35,7 +35,7 @@ export default function Launchpad() {
   const tokens = data?.tokens || [];
 
   return (
-    <div className="flex flex-col gap-8 items-center bg-yellow_green border-2 border-t-0 border-deep_green py-16 px-4 md:px-10">
+    <div className="flex flex-col gap-8 items-center bg-yellow_green border-t-2 border-deep_green py-16 px-4 md:px-10">
       <h1 className="text-6xl font-bold">The ERC50 Ecosystem</h1>
       {/* <div className="flex border-2 border-deep_green">
         {TABS.map((item, index) => (
@@ -49,11 +49,11 @@ export default function Launchpad() {
           </div>
         ))}
       </div> */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6">
         {tokens.map((item, index) => (
           <div
             key={index}
-            className="w-full lg:w-80 flex flex-col justify-between gap-4 bg-white border-2 border-deep_green p-4"
+            className="w-full flex flex-col justify-between gap-4 bg-white border-2 border-deep_green p-4"
           >
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-4">
