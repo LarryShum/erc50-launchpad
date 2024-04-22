@@ -1,6 +1,6 @@
 ## ERC50 Launchpad - Build by Dino Community ❤️🦖
 
-The first open-source launchpad powered by the ERC50 protocol
+The open-source launchpad powered by the ERC50 protocol
 
 Check it out at [erc50.org](https://erc50.org/) and explore the new 'anti-rug' meta. Trust no one, but the code.
 
