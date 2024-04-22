@@ -86,7 +86,7 @@ export default function Create() {
           Set your protocol parameters
         </h1>
         <h1 className="lg:hidden text-6xl font-bold">
-          You can create ERC50 token via Desktop
+          You can create ERC50 token via Desktop ❤️🦖
         </h1>
         <div className="max-lg:hidden grid grid-cols-2 gap-6">
           <Input
