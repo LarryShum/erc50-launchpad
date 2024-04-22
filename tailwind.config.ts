@@ -18,6 +18,28 @@ const config: Config = {
       fontFamily: {
         poppins: "var(--font-poppins)",
       },
+      keyframes: {
+        opacity: {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
+          },
+        },
+        fadeUp: {
+          "0%": {
+            transform: "translateY(80px)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
+        },
+      },
+      animation: {
+        opacity: "opacity 0.1s",
+        "fade-up": "fadeUp 0.2s",
+      },
     },
   },
   plugins: [],
