@@ -4,4 +4,4 @@ The open-source launchpad powered by the ERC50 protocol
 
 Check it out at [erc50.org](https://erc50.org/) and explore the new 'anti-rug' meta. Trust no one, but the code.
 
-![image](https://github.com/salluthdev/erc50-launchpad/assets/83701344/692941c3-f65c-441b-b706-b3c2538b61d9)
+![Screenshot 2024-04-22 210137](https://github.com/salluthdev/erc50-launchpad/assets/83701344/fdc8f3e1-aeca-47a3-b136-d56ee95e99e5)
