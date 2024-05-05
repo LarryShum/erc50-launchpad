@@ -1,4 +1,4 @@
-## ERC50 Launchpad - Build by Dino Community ❤️🦖
+## ERC50 Launchpad Clone - Build by Dino Community ❤️🦖
 
 The open-source launchpad powered by the ERC50 protocol
 
